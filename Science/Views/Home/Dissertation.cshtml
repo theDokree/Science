@@ -1,0 +1,53 @@
+﻿@model Science.Models.Dissertation
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<body>
+    <center>
+        <h2>Информация о диссертационном исследовании</h2>
+    </center>
+    <hr />
+
+    <h5>Наименование (тема) диссертации</h5>
+    <div class="well well-sm">
+        @Html.DisplayFor(model => model.Name)
+    </div>
+
+    <h5>Фамилия, имя, отчество соискателя</h5>
+    <div class="well well-sm">
+        @Html.DisplayFor(model => model.Author)
+    </div>
+    
+    <h5>Представлено к защите</h5>
+    <div class="well well-sm">
+        @Html.DisplayFor(model => model.Type)
+    </div>
+    
+    <h5>Шифр научной специальности</h5>
+    <div class="well well-sm">
+        @Html.DisplayFor(model => model.Index)
+    </div>
+    
+    <h5>На соискание степени</h5>
+    <div class="well well-sm">
+        @Html.DisplayFor(model => model.Rank)
+    </div>
+    <hr />
+
+    <h3>Сведения об организации, в которой утверждена тема диссертации</h3>
+    <h5>Телефон</h5>
+    <div class="well well-sm">
+        @Html.DisplayFor(model => model.Number)
+    </div>
+    
+    <h5>Город</h5>
+    <div class="well well-sm">
+        @Html.DisplayFor(model => model.City)
+    </div>
+</body>
+</html>

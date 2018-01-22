@@ -1,0 +1,39 @@
+﻿@model Science.Models.Dissertation
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Удалить диссертационное исследование</title>
+</head>
+<body>
+    <div>
+        <h3>Вы точно хотите удалить данное исследование?</h3>
+        <hr />
+
+        <h5>РК</h5>
+        <div class="well well-sm">
+            @Html.DisplayFor(model => model.Id)
+        </div>
+
+        <h5>Наименование (тема) диссертации</h5>
+        <div class="well well-sm">
+            @Html.DisplayFor(model => model.Name)
+        </div>
+
+        <h5>Фамилия, имя, отчество соискателя</h5>
+        <div class="well well-sm">
+            @Html.DisplayFor(model => model.Author)
+        </div>
+    </div>
+    @using (Html.BeginForm())
+    {
+        <input type="submit" class="btn btn-danger" value="Удалить" />
+    }
+    </body>
+</html>

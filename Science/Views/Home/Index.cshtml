@@ -1,0 +1,72 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ИС "Наука"</title>
+</head>
+<body>
+    <div>
+        <p></p>
+        <div class="jumbotron">
+            <h1>Добро пожаловать</h1>
+            <p>
+                Информационная система регистрации и учета научно-исследовательских работ, опытно-конструкторских работ и диссертационных исследований, проводимых в войсках национальной гвардии Российской Федерации
+            </p>
+        </div>
+    </div>
+    <div class="container">
+        <form action="/Home/BookSearch" data-ajax="true" data-ajax-mode="replace" data-ajax-update="#results" id="form0" method="post">
+            <div class="input-group">
+                <input type="text" name="id" class="form-control" placeholder="Введите РК">
+                <div class="input-group-btn">
+                    <button class="btn btn-default" type="submit">
+                        <i class="glyphicon glyphicon-search"></i>
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="container">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <td><p>РК</p></td>
+                    <td><p>Наименование</p></td>
+                    <td><p>Автор</p></td>
+                    <td><p>Представлено к защите</p></td>
+                    <td><p>Шифр научной специальности</p></td>
+                    <td><p>На соискание степени</p></td>
+                    <td><p>Телефон</p></td>
+                    <td><p>Город</p></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var b in ViewBag.Dissertations)
+                {
+                <tr>
+                    <td><p>@b.Id</p></td>
+                    <td><p>@b.Name</p></td>
+                    <td><p>@b.Author</p></td>
+                    <td><p>@b.Type</p></td>
+                    <td><p>@b.Index</p></td>
+                    <td><p>@b.Rank</p></td>
+                    <td><p>@b.Number</p></td>
+                    <td><p>@b.City</p></td>
+                    <td><p><a href="/Home/Dissertation/@b.Id">Инфо</a></p></td>
+                    <td><p><a href="/Home/DeleteDis/@b.Id">Удалить</a></p></td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    <hr />
+    <a href="/Home/Create" class="btn btn-default btn-lg-14" role="button">Добавить научно-исследовательскую работу</a>   <a href="/Home/CreateDis" class="btn btn-default btn-lg-30 pull-right" role="button">Добавить диссертационное исследование</a>
+</body>
+</html>

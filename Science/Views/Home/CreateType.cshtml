@@ -1,0 +1,16 @@
+﻿@model Science.Models.Type
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>Тип</h2>
+<hr />
+@using (Html.BeginForm())
+{
+    @Html.LabelFor(model => model.Name, "Название")
+    <br />
+    @Html.EditorFor(model => model.Name)
+    <br />
+    <br />
+    <input type="submit" value="Добавить" />
+}

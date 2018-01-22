@@ -162,6 +162,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Dissertation.cs" />
+    <Compile Include="Models\ModelView\DissertationModalView.cs" />
     <Compile Include="Models\Repository.cs" />
     <Compile Include="Models\ScienceContext.cs" />
     <Compile Include="Models\Type.cs" />

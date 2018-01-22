@@ -66,5 +66,12 @@ namespace Science.Controllers
             _repo.dellDissertation(id);
             return RedirectToAction("Index");
         }
+
+        [HttpPost, ActionName("DeleteDis")]
+        public ActionResult DeleteDcisConfirmed(int id)
+        {
+            _repo.dellDissertation(id);
+            return RedirectToAction("Index");
+        }
     }
 }

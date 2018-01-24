@@ -10,7 +10,6 @@ namespace Science.Models
         public int Id { get; set; }
         public string Name { get; set; }
         public string Author { get; set; }
-        //public int TypeId { get; set; }
         public int Type { get; set; }
         public string Rank { get; set; }
         public string Index { get; set; }

@@ -18,6 +18,15 @@ namespace Science.Controllers
             return View();
         }
 
+        public ActionResult Second()
+        {
+            ViewBag.Nirs = _repo.getListNirs();
+            ViewBag.Bases = _repo.getListBases();
+            ViewBag.Kinds = _repo.getListKinds();
+            ViewBag.Finances = _repo.getListFinances();
+            return View();
+        }
+
         [HttpGet]
         public ActionResult CreateDis()
         {
@@ -30,6 +39,25 @@ namespace Science.Controllers
         public ActionResult CreateDis(Dissertation dissertation)
         {
             _repo.addDissertation(dissertation);
+            return RedirectToAction("Index");
+        }
+
+        [HttpGet]
+        public ActionResult CreateNir()
+        {
+            SelectList bases = new SelectList(_repo.getListBases(), "Id", "Name");
+            ViewBag.Bases = bases;
+            SelectList finances = new SelectList(_repo.getListFinances(), "Id", "Name");
+            ViewBag.Finances = finances;
+            SelectList kinds = new SelectList(_repo.getListKinds(), "Id", "Name");
+            ViewBag.Kinds = kinds;
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult CreateNir(Nir nir)
+        {
+            _repo.addNir(nir);
             return RedirectToAction("Index");
         }
 
@@ -65,13 +93,6 @@ namespace Science.Controllers
         {
             _repo.dellDissertation(id);
             return RedirectToAction("Index");
-        }
-
-        [HttpPost, ActionName("DeleteDis")]
-        public ActionResult DeleteDcisConfirmed(int id)
-        {
-            _repo.dellDissertation(id);
-            return RedirectToAction("Index");
-        }
+        }        
     }
 }

@@ -50,23 +50,25 @@
             <tbody>
                 @foreach (var b in ViewBag.Dissertations)
                 {
-                <tr>
-                    <td><p>@b.Id</p></td>
-                    <td><p>@b.Name</p></td>
-                    <td><p>@b.Author</p></td>
-                    <td><p>@b.Type</p></td>
-                    <td><p>@b.Index</p></td>
-                    <td><p>@b.Rank</p></td>
-                    <td><p>@b.Number</p></td>
-                    <td><p>@b.City</p></td>
-                    <td><p><a href="/Home/Dissertation/@b.Id">Инфо</a></p></td>
-                    <td><p><a href="/Home/DeleteDis/@b.Id">Удалить</a></p></td>
-                </tr>
+                    <tr>
+                        <td><p>@b.Id</p></td>
+                        <td><p>@b.Name</p></td>
+                        <td><p>@b.Author</p></td>
+                        <td><p>@b.Type</p></td>
+                        <td><p>@b.Index</p></td>
+                        <td><p>@b.Rank</p></td>
+                        <td><p>@b.Number</p></td>
+                        <td><p>@b.City</p></td>
+                        <td><p><a href="/Home/Dissertation/@b.Id">Инфо</a></p></td>
+                        <td><p><a href="/Home/DeleteDis/@b.Id">Удалить</a></p></td>
+                    </tr>
                 }
             </tbody>
         </table>
     </div>
     <hr />
-    <a href="/Home/Create" class="btn btn-default btn-lg-14" role="button">Добавить научно-исследовательскую работу</a>   <a href="/Home/CreateDis" class="btn btn-default btn-lg-30 pull-right" role="button">Добавить диссертационное исследование</a>
+    <a href="/Home/CreateNir" class="btn btn-default btn-lg" role="button">Добавить научно-исследовательскую работу</a>   <a href="/Home/CreateDis" class="btn btn-default btn-lg pull-right" role="button">Добавить диссертационное исследование</a>
+    <br />
+    <a href="/Home/Second" class="btn btn-default btn-lg pull-right" role="button">НИР</a>
 </body>
 </html>

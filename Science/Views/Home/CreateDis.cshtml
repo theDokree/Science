@@ -16,33 +16,40 @@
 
 @using (Html.BeginForm())
 {
-    <div class="container">
-        <div class="form-group">
-            @Html.LabelFor(model => model.Name, "Наименование (тема) диссертации", new { @class = "col-md-2 control-label" })
-            @Html.TextBoxFor(model => model.Name, new { @class = "form-control col-lg-50" })
+<div class="container">
+    <div class="form-group" id="data_1">
+        <label class="font-noraml">Дата утверждения темы</label>
+        <div class="input-group date">
+            <span class="input-group-addon"><i class="fa fa-calendar"></i></span><input type="text" class="form-control" value="01/01/2018">
         </div>
-        <br />
-        <div class="form-group">
-            @Html.LabelFor(model => model.Author, "Фамилия, имя, отчество соискателя", new { @class = "col-md-2 control-label" })
-            @Html.TextBoxFor(model => model.Author, new { @class = "form-control" })
-        </div>
-        <br />
-        <div class="form-group">
-            @Html.LabelFor(model => model.Type, "Представлено к защите", new { @class = "col-md-2 control-label" })
-            @Html.DropDownListFor(model => model.Type, ViewBag.Types as SelectList)
-        </div>
-        <br />
-        <div class="form-group">
-            @Html.LabelFor(model => model.Index, "Шифр научной специальности", new { @class = "col-md-2 control-label" })
-            @Html.TextBoxFor(model => model.Index, new { @class = "form-control" })
-        </div>
-        <br />
-        <div class="form-group">
-            @Html.LabelFor(model => model.Rank, "На соискание степени", new { @class = "col-md-2 control-label" })
-            @Html.TextBoxFor(model => model.Rank, new { @class = "form-control" })
-        </div>
-        <br />
     </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Name, "Наименование (тема) диссертации", new { @class = "col-md-2 control-label" })
+        @Html.TextBoxFor(model => model.Name, new { @class = "form-control col-lg-50" })
+    </div>
+    <br />
+    <div class="form-group">
+        @Html.LabelFor(model => model.Author, "Фамилия, имя, отчество соискателя", new { @class = "col-md-2 control-label" })
+        @Html.TextBoxFor(model => model.Author, new { @class = "form-control" })
+    </div>
+    <br />
+    <div class="form-group">
+        @Html.LabelFor(model => model.Type, "Представлено к защите", new { @class = "col-md-2 control-label" })
+        @Html.DropDownListFor(model => model.Type, ViewBag.Types as SelectList)
+    </div>
+    <br />
+    <div class="form-group">
+        @Html.LabelFor(model => model.Index, "Шифр научной специальности", new { @class = "col-md-2 control-label" })
+        @Html.TextBoxFor(model => model.Index, new { @class = "form-control" })
+    </div>
+    <br />
+    <div class="form-group">
+        @Html.LabelFor(model => model.Rank, "На соискание степени", new { @class = "col-md-2 control-label" })
+        @Html.TextBoxFor(model => model.Rank, new { @class = "form-control" })
+    </div>
+    <br />
+</div>
 
     <hr />
     <h3>Сведения об организации, в которой утверждена тема диссертации</h3>

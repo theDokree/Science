@@ -161,8 +161,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Base.cs" />
     <Compile Include="Models\Dissertation.cs" />
+    <Compile Include="Models\Finance.cs" />
+    <Compile Include="Models\Kind.cs" />
     <Compile Include="Models\ModelView\DissertationModalView.cs" />
+    <Compile Include="Models\ModelView\NirModalView.cs" />
+    <Compile Include="Models\Nir.cs" />
     <Compile Include="Models\Repository.cs" />
     <Compile Include="Models\ScienceContext.cs" />
     <Compile Include="Models\Type.cs" />
@@ -211,6 +216,8 @@
     <Content Include="Views\Home\CreateType.cshtml" />
     <Content Include="Views\Home\Dissertation.cshtml" />
     <Content Include="Views\Home\DeleteDis.cshtml" />
+    <Content Include="Views\Home\CreateNir.cshtml" />
+    <Content Include="Views\Home\Second.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

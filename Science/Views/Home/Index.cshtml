@@ -50,18 +50,19 @@
             <tbody>
                 @foreach (var b in ViewBag.Dissertations)
                 {
-                    <tr>
-                        <td><p>@b.Id</p></td>
-                        <td><p>@b.Name</p></td>
-                        <td><p>@b.Author</p></td>
-                        <td><p>@b.Type</p></td>
-                        <td><p>@b.Index</p></td>
-                        <td><p>@b.Rank</p></td>
-                        <td><p>@b.Number</p></td>
-                        <td><p>@b.City</p></td>
-                        <td><p><a href="/Home/Dissertation/@b.Id">Инфо</a></p></td>
-                        <td><p><a href="/Home/DeleteDis/@b.Id">Удалить</a></p></td>
-                    </tr>
+                <tr>
+                    <td><p>@b.Id</p></td>
+                    <td><p>@b.Name</p></td>
+                    <td><p>@b.Author</p></td>
+                    <td><p>@b.Type</p></td>
+                    <td><p>@b.Index</p></td>
+                    <td><p>@b.Rank</p></td>
+                    <td><p>@b.Number</p></td>
+                    <td><p>@b.City</p></td>
+                    <td><p><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Инфо</button></p></td>
+                    <!--<td><p><button type="button" class="btn btn-danger" href="/Home/DeleteDis/@b.Id">Удалить</button></p></td>-->
+                    <td><p><a href="/Home/DeleteDis/@b.Id" class="btn btn-danger">Удалить</a></p></td>
+                </tr>
                 }
             </tbody>
         </table>
@@ -70,5 +71,66 @@
     <a href="/Home/CreateNir" class="btn btn-default btn-lg" role="button">Добавить научно-исследовательскую работу</a>   <a href="/Home/CreateDis" class="btn btn-default btn-lg pull-right" role="button">Добавить диссертационное исследование</a>
     <br />
     <a href="/Home/Second" class="btn btn-default btn-lg pull-right" role="button">НИР</a>
+
+    <div class="ibox-content">
+        <div class="modal inmodal" id="myModal" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content animated bounceInRight">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        <i class="fa fa-laptop modal-icon"></i>
+                        <h4 class="modal-title">Информация о диссертационном исследовании</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>
+                            @foreach (var с in ViewBag.Dissertations)
+                            {
+                        <h5>Наименование (тема) диссертации</h5>
+                            <div class="well well-sm">
+                                @с.Name
+                            </div>
+
+                            <h5>Фамилия, имя, отчество соискателя</h5>
+                            <div class="well well-sm">
+                                @с.Author
+                            </div>
+
+                            <h5>Представлено к защите</h5>
+                            <div class="well well-sm">
+                                @с.Type
+                            </div>
+
+                            <h5>Шифр научной специальности</h5>
+                            <div class="well well-sm">
+                                @с.Index
+                            </div>
+
+                            <h5>На соискание степени</h5>
+                            <div class="well well-sm">
+                                @с.Rank
+                            </div>
+                            <hr />
+
+                            <h3>Сведения об организации, в которой утверждена тема диссертации</h3>
+                            <h5>Телефон</h5>
+                            <div class="well well-sm">
+                                @с.Number
+                            </div>
+
+                            <h5>Город</h5>
+                            <div class="well well-sm">
+                                @с.City
+                            </div>
+                            }
+                        </p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-white" data-dismiss="modal">Закрыть</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
 </body>
 </html>

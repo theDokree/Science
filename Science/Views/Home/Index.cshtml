@@ -73,9 +73,9 @@
     <a href="/Home/Second" class="btn btn-default btn-lg pull-right" role="button">НИР</a>
 
     <div class="ibox-content">
-        <div class="modal inmodal" id="myModal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog">
-                <div class="modal-content animated bounceInRight">
+                <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
                         <i class="fa fa-laptop modal-icon"></i>
@@ -85,52 +85,51 @@
                         <p>
                             @foreach (var с in ViewBag.Dissertations)
                             {
-                        <h5>Наименование (тема) диссертации</h5>
-                            <div class="well well-sm">
-                                @с.Name
-                            </div>
+                                <h5>Наименование (тема) диссертации</h5>
+                                <div class="well well-sm">
+                                    @с.Name
+                                </div>
 
-                            <h5>Фамилия, имя, отчество соискателя</h5>
-                            <div class="well well-sm">
-                                @с.Author
-                            </div>
+                                <h5>Фамилия, имя, отчество соискателя</h5>
+                                <div class="well well-sm">
+                                    @с.Author
+                                </div>
 
-                            <h5>Представлено к защите</h5>
-                            <div class="well well-sm">
-                                @с.Type
-                            </div>
+                                <h5>Представлено к защите</h5>
+                                <div class="well well-sm">
+                                    @с.Type
+                                </div>
 
-                            <h5>Шифр научной специальности</h5>
-                            <div class="well well-sm">
-                                @с.Index
-                            </div>
+                                <h5>Шифр научной специальности</h5>
+                                <div class="well well-sm">
+                                    @с.Index
+                                </div>
 
-                            <h5>На соискание степени</h5>
-                            <div class="well well-sm">
-                                @с.Rank
-                            </div>
-                            <hr />
+                                <h5>На соискание степени</h5>
+                                <div class="well well-sm">
+                                    @с.Rank
+                                </div>
+                                <hr />
 
-                            <h3>Сведения об организации, в которой утверждена тема диссертации</h3>
-                            <h5>Телефон</h5>
-                            <div class="well well-sm">
-                                @с.Number
-                            </div>
+                                <h3>Сведения об организации, в которой утверждена тема диссертации</h3>
+                                <h5>Телефон</h5>
+                                <div class="well well-sm">
+                                    @с.Number
+                                </div>
 
-                            <h5>Город</h5>
-                            <div class="well well-sm">
-                                @с.City
-                            </div>
+                                <h5>Город</h5>
+                                <div class="well well-sm">
+                                    @с.City
+                                </div>
                             }
                         </p>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-white" data-dismiss="modal">Закрыть</button>
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">Закрыть</button>
                     </div>
                 </div>
             </div>
         </div>
-
     </div>
 </body>
 </html>

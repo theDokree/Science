@@ -15,5 +15,6 @@ namespace Science.Models
         public string Index { get; set; }
         public string Number { get; set; }
         public string City { get; set; }
+        public DateTime Date { get; set; }
     }
 }

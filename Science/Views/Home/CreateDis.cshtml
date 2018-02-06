@@ -20,7 +20,7 @@
         <div class="form-group" id="data_1">
             @Html.LabelFor(model => model.Date, "Дата отправки (исходящий номер)", new { @class = "col-md-2 control-label" })
             <div class="input-group date">
-                <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span><input type="text" class="form-control" value="01/31/2018">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span><input type="text" name="Date" id="Date" class="form-control" value="">
             </div>
         </div>
         <br />
@@ -73,15 +73,17 @@
         @Scripts.Render("~/plugins/dataPicker")
 
         <script type="text/javascript">
+            //Documentation on http://bootstrap-datepicker.readthedocs.io/en/latest/
             $(document).ready(function () {
-                $("#data_1 .input-group.date").datepicker({                    
+                $(".input-group.date").datepicker({                    
                     todayBtn: "linked",
                     keyboardNavigation: false,
                     forceParse: false,
                     calendarWeeks: true,
                     autoclose: true,
-                    dateFormat: 'dd-mm-yy'
-                });                
+                    language: 'ru',
+                    format: 'dd.mm.yyyy'
+                });
             });
         </script>
     }

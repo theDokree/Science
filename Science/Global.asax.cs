@@ -1,5 +1,8 @@
-﻿using System;
+﻿using Science.Data;
+using Science.Migrations;
+using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -12,6 +15,10 @@ namespace Science
     {
         protected void Application_Start()
         {
+           Database.SetInitializer(new DbInitializer());
+
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<ScienceContext, Configuration>());
+
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);

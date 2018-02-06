@@ -41,7 +41,8 @@ namespace Science
 
             // dataPicker 
             bundles.Add(new ScriptBundle("~/plugins/dataPicker").Include(
-                      "~/Scripts/plugins/datapicker/bootstrap-datepicker.js"));
+                      "~/Scripts/plugins/datapicker/bootstrap-datepicker.js",
+                      "~/Scripts/plugins/datapicker/bootstrap-datepicker.ru.min.js"));
         }
     }
 }

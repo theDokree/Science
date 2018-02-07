@@ -104,5 +104,10 @@ namespace Science.Models
             }
             return result;
         }
+
+        public static implicit operator Repository(ScienceContext v)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

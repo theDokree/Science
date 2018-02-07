@@ -17,7 +17,7 @@ namespace Science.Controllers
             ViewBag.Types = _repo.getListTypes();
             return View();
         }
-
+       
         public ActionResult Second()
         {
             ViewBag.Nirs = _repo.getListNirs();

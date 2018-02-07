@@ -1667,5 +1667,5 @@
 	$(function(){
 		$('[data-provide="datepicker-inline"]').datepicker();
 	});
-
+    
 }(window.jQuery));

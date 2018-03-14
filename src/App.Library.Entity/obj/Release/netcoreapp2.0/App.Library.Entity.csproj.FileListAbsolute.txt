@@ -1,0 +1,13 @@
+D:\Work\portal.rosgvard.ru_2017\portal\src\App.Library.Entity\bin\Release\netcoreapp2.0\App.Library.Entity.deps.json
+D:\Work\portal.rosgvard.ru_2017\portal\src\App.Library.Entity\bin\Release\netcoreapp2.0\App.Library.Entity.dll
+D:\Work\portal.rosgvard.ru_2017\portal\src\App.Library.Entity\bin\Release\netcoreapp2.0\App.Library.Entity.pdb
+D:\Work\portal.rosgvard.ru_2017\portal\src\App.Library.Entity\bin\Release\netcoreapp2.0\App.Library.Common.dll
+D:\Work\portal.rosgvard.ru_2017\portal\src\App.Library.Entity\bin\Release\netcoreapp2.0\Microsoft.Extensions.Identity.Stores.dll
+D:\Work\portal.rosgvard.ru_2017\portal\src\App.Library.Entity\bin\Release\netcoreapp2.0\App.Library.Common.pdb
+D:\Work\portal.rosgvard.ru_2017\portal\src\App.Library.Entity\bin\Release\netcoreapp2.0\Microsoft.Extensions.Identity.Stores.xml
+D:\Work\portal.rosgvard.ru_2017\portal\src\App.Library.Entity\obj\Release\netcoreapp2.0\App.Library.Entity.csprojResolveAssemblyReference.cache
+D:\Work\portal.rosgvard.ru_2017\portal\src\App.Library.Entity\obj\Release\netcoreapp2.0\App.Library.Entity.csproj.CoreCompileInputs.cache
+D:\Work\portal.rosgvard.ru_2017\portal\src\App.Library.Entity\obj\Release\netcoreapp2.0\App.Library.Entity.AssemblyInfoInputs.cache
+D:\Work\portal.rosgvard.ru_2017\portal\src\App.Library.Entity\obj\Release\netcoreapp2.0\App.Library.Entity.AssemblyInfo.cs
+D:\Work\portal.rosgvard.ru_2017\portal\src\App.Library.Entity\obj\Release\netcoreapp2.0\App.Library.Entity.dll
+D:\Work\portal.rosgvard.ru_2017\portal\src\App.Library.Entity\obj\Release\netcoreapp2.0\App.Library.Entity.pdb

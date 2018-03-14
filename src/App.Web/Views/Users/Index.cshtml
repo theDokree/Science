@@ -1,0 +1,158 @@
+﻿@using App.Library.Entity.DAO
+@model Sakura.AspNetCore.IPagedList<ApplicationUser>
+@inject UserManager<ApplicationUser> UserManager
+
+@{
+    ViewData["Title"] = "Пользователи";
+}
+<div class="container">
+    <div class="c-header">
+        <h2>Настройки | @ViewData["Title"]</h2>
+    </div>
+    <div class="card">
+
+        <div class="action-header palette-White-500 bg clearfix">
+            <div class="ah-label hidden-xs text">
+                @ViewData["Title"] (@Model.TotalCount)
+            </div>
+
+
+            @using (Html.BeginForm("Index", "Users", FormMethod.Get, new { @class = "" }))
+            {
+
+
+                <div class="ah-search">
+                    @Html.TextBox("searchstring", null, htmlAttributes: new { @class = "ahs-input", placeholder = "Поиск" })
+                    <i class="ah-search-close zmdi zmdi-long-arrow-left" data-ma-action="ah-search-close"></i>
+                </div>
+
+                <ul class="ah-actions actions a-alt">
+                    <li>
+                        <a href="" class="ah-search-trigger" data-ma-action="ah-search-open">
+                            <i class="zmdi zmdi-search"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <i class="zmdi zmdi-time"></i>
+                        </a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="" data-toggle="dropdown" aria-expanded="true">
+                            <i class="zmdi zmdi-sort"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-right">
+                            <li>
+                                <a asp-action="Index" title="Сортировать" asp-route-sortorder="@ViewBag.UserNameSortParm" asp-route-searchstring="@ViewBag.searchstring">
+                                    @if (ViewBag.UserNameSortParm == "username_desc")
+                                    {<i class="fa fa-sort-amount-asc"></i>}
+                                    @if (ViewBag.UserNameSortParm == "")
+                                    {<i class="fa fa-sort-amount-desc"></i>}
+                                    Имя пользователя
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">Last Edited</a>
+                            </li>
+                            <li>
+                                <a href="">Name</a>
+                            </li>
+                            <li>
+                                <a href="">Date</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="">
+                            <i class="zmdi zmdi-info"></i>
+                        </a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="" data-toggle="dropdown" aria-expanded="true">
+                            <i class="zmdi zmdi-more-vert"></i>
+                        </a>
+
+                        <ul class="dropdown-menu dropdown-menu-right">
+                            <li>
+                                <a href="">Refresh</a>
+                            </li>
+                            <li>
+                                <a href="">Listview Settings</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            }
+        </div>
+
+        <div class="card-body card-padding">
+            <div class="row">
+                <div class="col-lg-12">
+                    <a asp-action="create" class="btn btn-primary waves-effect">
+                        <i class="zmdi zmdi-plus"></i> Добавить
+                    </a>
+                </div>
+            </div>
+
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>ФИО</th>
+                            <th>Адрес элетронной почты</th>
+                            <th>Роли</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td></td>
+                                <td>@item.DisplayName</td>
+                                <td>@item.Email</td>
+                                <td>@string.Join(", ", UserManager.GetRolesAsync(item).Result)</td>
+                                <td>
+                                    <div class="pull-right">
+                                        <ul class="actions">
+                                            <li class="dropdown">
+                                                <a href="" data-toggle="dropdown" aria-expanded="false">
+                                                    <i class="zmdi zmdi-more-vert"></i>
+                                                </a>
+                                                <ul class="dropdown-menu dm-icon dropdown-menu-right">
+                                                    <li> <a href=""><i class="zmdi zmdi-account-box-o"></i> Просмотр</a></li>
+                                                    <li> <a asp-action="edit" asp-route-id="@item.Id"><i class="zmdi zmdi-edit"></i> Редактировать</a></li>
+                                                    <li class="divider"></li>
+                                                    <li><a asp-action="delete" asp-route-id="@item.Id"><i class="zmdi zmdi-delete"></i> Удалить</a></li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+                <div id="data-table-basic-footer" class="bootgrid-footer container-fluid">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <pager source="@Model" setting-list-attr-class="pagination" />
+                        </div>
+                        <div class="col-sm-6 infoBar">
+                            <div class="infos">Показаны с @Model.PageIndex по @Model.Count из @Model.TotalCount записей</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+    <script>
+        $(document).ready(function () {
+            $("li#Settings").addClass("active");
+            $("li#Users").addClass("active");
+        });
+    </script>
+}

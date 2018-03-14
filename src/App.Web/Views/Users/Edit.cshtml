@@ -1,0 +1,129 @@
+﻿@model EditViewModel
+@using App.Library.Entity.DAO
+
+
+@{
+    ViewData["Title"] = "Редактировать";
+}
+<div class="container">
+    <div class="c-header">
+        <h2>Настройки / <a asp-action="Index" class="c-white">Пользователи</a> / @ViewData["Title"]</h2>
+    </div>
+
+    <div class="card">
+        <div class="card-header">
+            <h2>Форма редактирования пользователя <small> @ViewData["Title"]</small></h2>
+        </div>
+
+        <div class="card-body card-padding">
+            <form asp-action="edit" asp-controller="users" asp-anti-forgery="true">
+                <div class="validation-summary-errors" asp-validation-summary="All"></div>
+                <input asp-for="Id" type="hidden" />
+                <p class="c-black f-500">ПЕРСОНАЛЬНАЯ ИНФОРМАЦИЯ</p>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="form-group fg-float">
+                            <div class="fg-line">
+                                <label class="fg-label" asp-for="LastName"></label>
+                                <input type="text" asp-for="LastName" class="form-control fg-input" />
+                            </div>
+                            <span asp-validation-for="LastName" />
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="form-group fg-float">
+                            <div class="fg-line">
+                                <label class="fg-label" asp-for="FirstName"></label>
+                                <input type="text" asp-for="FirstName" class="form-control fg-input" />
+
+                            </div>
+                            <span asp-validation-for="FirstName" />
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="form-group fg-float">
+                            <div class="fg-line">
+                                <label class="fg-label" asp-for="MiddleName"></label>
+                                <input type="text" asp-for="MiddleName" class="form-control fg-input" />
+
+                            </div>
+                            <span asp-validation-for="MiddleName" />
+                        </div>
+                    </div>
+                </div>
+
+                <br>
+                <p class="m-b-25 m-t-25 c-black f-500">АВТОРИЗАЦИОННАЯ ИНФОРМАЦИЯ</p>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="form-group fg-float">
+                            <div class="fg-line">
+                                <label class="fg-label" asp-for="Email"></label>
+                                <input asp-for="Email" class="form-control fg-input" />
+
+                            </div>
+                            <span asp-validation-for="Email" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="form-group fg-float">
+                            <div class="fg-line">
+                                <label class="fg-label" asp-for="Password"></label>
+                                <input asp-for="Password" class="form-control fg-input" />
+
+                            </div>
+                            <span asp-validation-for="Password" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="form-group fg-float">
+                            <div class="fg-line">
+                                <label class="fg-label" asp-for="ConfirmPassword"></label>
+                                <input asp-for="ConfirmPassword" class="form-control fg-input" />
+
+                            </div>
+                            <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row m-b-20">
+                    <div class="col-lg-12">
+                        <div class="sub-title m-b-20">РОЛИ ПОЛЬЗОВАТЕЛЯ</div>
+
+                        @{var i = 0; }
+                        @foreach (var item in ViewData["Roles"] as IQueryable<ApplicationRole>)
+                        {
+                            <label class="checkbox checkbox-inline m-r-20" for="roles_@i" title="@item.Descriptions">
+                                <input type="checkbox" id="roles_@i" name="Roles" value="@item.Name" title="@item.Descriptions" @(Model.Roles.Contains(item.Name) ? "checked=\"checked\"" : "") />
+                                <i class="input-helper">
+                                    @item.Name
+                                </i>
+                            </label>
+
+
+                            i++;
+                        }
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary hvr-shutter-out-horizontal">Сохранить</button>
+            </form>
+
+        </div>
+    </div>
+</div>
+@section Scripts{
+
+    @await Html.PartialAsync("_ValidationScriptsPartial")
+
+    <script>
+        $(document).ready(function () {
+            $("li#Settings").addClass("active");
+            $("li#Users").addClass("active");
+        });
+    </script>
+}

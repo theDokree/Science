@@ -1,0 +1,431 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] | Информационно-справочный портал</title>
+    <link rel="shortcut icon" type="image/x-icon" href="~/images/favicon.ico" />
+    @*<link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />*@
+
+    <link href="~/lib/animate-css/animate.min.css" rel="stylesheet" />
+    <link href="~/lib/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.min.css" rel="stylesheet" />
+    <link href="~/lib/material-design-iconic-font/dist/css/material-design-iconic-font.min.css" rel="stylesheet" />
+    <link href="~/lib/google-material-color/dist/palette.css" rel="stylesheet" />
+    <link href="~/lib/jquery.bootgrid/dist/jquery.bootgrid.min.css" rel="stylesheet" />
+    <link href="~/lib/bootstrap-sweetalert/dist/sweetalert.css" rel="stylesheet" />
+    @*<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />*@
+    <link href="~/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/lib/roboto-fontface/css/roboto/roboto-fontface.css" rel="stylesheet" />
+    <link href="~/lib/roboto-condensed/css/roboto-condensed.css" rel="stylesheet" />
+    <link href="~/lib/chosen/chosen.min.css" rel="stylesheet" />
+
+
+    <link href="~/css/live-chat.css" rel="stylesheet" />
+
+    <link href="~/css/app.min.1.css" rel="stylesheet" />
+    <link href="~/css/app.min.2.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body data-ma-header="red-400">
+
+
+
+    <div id="bg"></div>
+    <div class="pull-left h-logo2">
+        <div class="menu-collapse" data-ma-action="sidebar-open" data-ma-target="main-menu">
+            @*<i class="hm-icon  zmdi zmdi-menu"></i>*@
+            <div class="mc-wrap">
+                <div class="mcw-line top palette-White bg"></div>
+                <div class="mcw-line center palette-White bg"></div>
+                <div class="mcw-line bottom palette-White bg"></div>
+            </div>
+        </div>
+    </div>
+
+
+    <header id="header" class="media">
+        <div class="pull-left h-logo">
+            <a href="~/" class="hidden-xs">
+                <img src="~/images/header.png" width="140" />
+                @*РОСГВАРДИЯ
+                    <small>информационно-справочный портал</small>*@
+            </a>
+
+        </div>
+
+        <ul class="pull-right h-menu">
+            @*<li class="hm-search-trigger">
+                    <a href="" data-ma-action="search-open">
+                        <i class="hm-icon zmdi zmdi-search"></i>
+                    </a>
+                </li>*@
+
+            <li class="dropdown hidden-xs hidden-sm h-apps">
+                <a data-toggle="dropdown" href="">
+                    <i class="hm-icon zmdi zmdi-apps"></i>
+                </a>
+                <ul class="dropdown-menu pull-right">
+                    <li>
+                        <a href="">
+                            <i class="palette-Red-400 bg zmdi zmdi-calendar"></i>
+                            <small>Календарь</small>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="">
+                            <i class="palette-Green-400 bg zmdi zmdi-file-text"></i>
+                            <small>Документы</small>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <i class="palette-Light-Blue bg zmdi zmdi-email"></i>
+                            <small>Почта</small>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <i class="palette-Orange-400 bg zmdi zmdi-trending-up"></i>
+                            <small>Аналитика</small>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <i class="palette-Purple-300 bg zmdi zmdi-view-headline"></i>
+                            <small>Новости</small>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <i class="palette-Blue-Grey bg zmdi zmdi-image"></i>
+                            <small>Галерея</small>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="dropdown hidden-xs">
+                <a data-toggle="dropdown" href=""><i class="hm-icon zmdi zmdi-more-vert"></i></a>
+                <ul class="dropdown-menu dm-icon pull-right">
+                    <li class="hidden-xs">
+                        <a data-action="fullscreen" href=""><i class="zmdi zmdi-fullscreen"></i> Полноэкранный режим</a>
+                    </li>
+                    <li>
+                        <a data-action="clear-localstorage" href=""><i class="zmdi zmdi-delete"></i> Очистить локальное хранилище (Local Storage)</a>
+                    </li>
+                    <li>
+                        <a href=""><i class="zmdi zmdi-face"></i> Параметры конфиденциальности</a>
+                    </li>
+                    <li>
+                        <a href=""><i class="zmdi zmdi-settings"></i> Другие настройки</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="hm-alerts " data-user-alert="sua-messages" data-ma-action="sidebar-open" data-ma-target="user-alerts">
+                <a href=""><i class="hm-icon zmdi zmdi-notifications"></i></a>
+            </li>
+
+
+            @await Html.PartialAsync("_LoginPartial")
+
+
+        </ul>
+
+        <div class="media-body">
+
+            <h1 class="text-uppercase h-text-logo">РОСГВАРДИЯ</h1>
+            <h5 class="text-uppercase" style="color:#ffffff;margin-left: 4px;">Федеральная служба войск национальной гвардии Российской федерации</h5>
+            @*<form class="p-relative">
+                    <input type="text" class="hs-input" placeholder="Поиск кандидатов, файлов и отчетов">
+                    <i class="zmdi zmdi-search hs-reset" data-ma-action="search-clear"></i>
+                </form>*@
+        </div>
+
+    </header>
+
+    <section id="main">
+        <aside id="s-user-alerts" class="sidebar">
+            <ul class="tab-nav tn-justified tn-icon m-t-10" data-tab-color="teal">
+                <li><a class="sua-messages" href="#sua-messages" data-toggle="tab"><i class="zmdi zmdi-email"></i></a></li>
+                <li><a class="sua-notifications" href="#sua-notifications" data-toggle="tab"><i class="zmdi zmdi-notifications"></i></a></li>
+                <li><a class="sua-tasks" href="#sua-tasks" data-toggle="tab"><i class="zmdi zmdi-view-list-alt"></i></a></li>
+            </ul>
+
+            <div class="tab-content">
+                <div class="tab-pane fade" id="sua-messages">
+                    <ul class="sua-menu list-inline list-unstyled palette-Light-Blue bg">
+                        <li><a href=""><i class="zmdi zmdi-check-all"></i> Mark all</a></li>
+                        <li><a href=""><i class="zmdi zmdi-long-arrow-tab"></i> View all</a></li>
+                        <li><a href="" data-ma-action="sidebar-close"><i class="zmdi zmdi-close"></i> Close</a></li>
+                    </ul>
+
+                    <div class="list-group lg-alt c-overflow mCustomScrollbar _mCS_1 mCS-autoHide" style="position: relative; overflow: visible;">
+                        <a href="" class="list-group-item media">
+                            <div class="pull-left">
+                                <img class="avatar-img mCS_img_loaded" src="~/images/user.jpg" alt="">
+                            </div>
+
+                            <div class="media-body">
+                                <div class="lgi-heading">David Villa Jacobs</div>
+                                <small class="lgi-text">Sorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam mattis lobortis sapien non posuere</small>
+                            </div>
+                        </a>
+
+                        <a href="" class="list-group-item media">
+                            <div class="pull-left">
+                                <img class="avatar-img mCS_img_loaded" src="img/profile-pics/5.jpg" alt="">
+                            </div>
+                            <div class="media-body">
+                                <div class="lgi-heading">Candice Barnes</div>
+                                <small class="lgi-text">Quisque non tortor ultricies, posuere elit id, lacinia purus curabitur.</small>
+                            </div>
+                        </a>
+
+                        <a href="" class="list-group-item media">
+                            <div class="pull-left">
+                                <img class="avatar-img mCS_img_loaded" src="img/profile-pics/3.jpg" alt="">
+                            </div>
+                            <div class="media-body">
+                                <div class="lgi-heading">Jeannette Lawson</div>
+                                <small class="lgi-text">Donec congue tempus ligula, varius hendrerit mi hendrerit sit amet. Duis ac quam sit amet leo feugiat iaculis</small>
+                            </div>
+                        </a>
+
+                        <a href="" class="list-group-item media">
+                            <div class="pull-left">
+                                <img class="avatar-img mCS_img_loaded" src="img/profile-pics/4.jpg" alt="">
+                            </div>
+                            <div class="media-body">
+                                <div class="lgi-heading">Darla Mckinney</div>
+                                <small class="lgi-text">Duis tincidunt augue nec sem dignissim scelerisque. Vestibulum rhoncus sapien sed nulla aliquam lacinia</small>
+                            </div>
+                        </a>
+
+                        <a href="" class="list-group-item media">
+                            <div class="pull-left">
+                                <img class="avatar-img mCS_img_loaded" src="img/profile-pics/2.jpg" alt="">
+                            </div>
+                            <div class="media-body">
+                                <div class="lgi-heading">Rudolph Perez</div>
+                                <small class="lgi-text">Phasellus a ullamcorper lectus, sit amet viverra quam. In luctus tortor vel nulla pharetra bibendum</small>
+                            </div>
+                        </a>
+
+
+
+                    </div>
+
+                    <a href="" class="btn btn-float btn-danger m-btn waves-effect waves-circle waves-float">
+                        <i class="zmdi zmdi-plus"></i>
+                    </a>
+                </div>
+                <div class="tab-pane fade" id="sua-notifications">
+                    <ul class="sua-menu list-inline list-unstyled palette-Orange bg">
+                        <li><a href=""><i class="zmdi zmdi-volume-off"></i> Mute</a></li>
+                        <li><a href=""><i class="zmdi zmdi-long-arrow-tab"></i> View all</a></li>
+                        <li><a href="" data-ma-action="sidebar-close"><i class="zmdi zmdi-close"></i> Close</a></li>
+                    </ul>
+
+                    <div class="list-group lg-alt c-overflow mCustomScrollbar _mCS_2 mCS-autoHide" style="position: relative; overflow: visible;">
+                        <a href="" class="list-group-item media">
+                            <div class="pull-left">
+                                <img class="avatar-img mCS_img_loaded" src="img/profile-pics/1.jpg" alt="">
+                            </div>
+
+                            <div class="media-body">
+                                <div class="lgi-heading">David Villa Jacobs</div>
+                                <small class="lgi-text">Sorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam mattis lobortis sapien non posuere</small>
+                            </div>
+                        </a>
+
+                        <a href="" class="list-group-item media">
+                            <div class="pull-left">
+                                <img class="avatar-img mCS_img_loaded" src="img/profile-pics/5.jpg" alt="">
+                            </div>
+                            <div class="media-body">
+                                <div class="lgi-heading">Candice Barnes</div>
+                                <small class="lgi-text">Quisque non tortor ultricies, posuere elit id, lacinia purus curabitur.</small>
+                            </div>
+                        </a>
+
+                        <a href="" class="list-group-item media">
+                            <div class="pull-left">
+                                <img class="avatar-img mCS_img_loaded" src="img/profile-pics/3.jpg" alt="">
+                            </div>
+                            <div class="media-body">
+                                <div class="lgi-heading">Jeannette Lawson</div>
+                                <small class="lgi-text">Donec congue tempus ligula, varius hendrerit mi hendrerit sit amet. Duis ac quam sit amet leo feugiat iaculis</small>
+                            </div>
+                        </a>
+
+                        <a href="" class="list-group-item media">
+                            <div class="pull-left">
+                                <img class="avatar-img mCS_img_loaded" src="img/profile-pics/4.jpg" alt="">
+                            </div>
+                            <div class="media-body">
+                                <div class="lgi-heading">Darla Mckinney</div>
+                                <small class="lgi-text">Duis tincidunt augue nec sem dignissim scelerisque. Vestibulum rhoncus sapien sed nulla aliquam lacinia</small>
+                            </div>
+                        </a>
+
+                        <a href="" class="list-group-item media">
+                            <div class="pull-left">
+                                <img class="avatar-img mCS_img_loaded" src="img/profile-pics/2.jpg" alt="">
+                            </div>
+                            <div class="media-body">
+                                <div class="lgi-heading">Rudolph Perez</div>
+                                <small class="lgi-text">Phasellus a ullamcorper lectus, sit amet viverra quam. In luctus tortor vel nulla pharetra bibendum</small>
+                            </div>
+                        </a>
+
+
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="sua-tasks">
+                    <ul class="sua-menu list-inline list-unstyled palette-Green-400 bg">
+                        <li><a href=""><i class="zmdi zmdi-time"></i> Archived</a></li>
+                        <li><a href=""><i class="zmdi zmdi-check-all"></i> Mark all</a></li>
+                        <li><a href="" data-ma-action="sidebar-close"><i class="zmdi zmdi-close"></i> Close</a></li>
+                    </ul>
+
+                    <div class="list-group lg-alt c-overflow mCustomScrollbar _mCS_3 mCS-autoHide" style="position: relative; overflow: visible;">
+                        <div class="list-group-item">
+                            <div class="lgi-heading m-b-5">HTML5 Validation Report</div>
+
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" style="width: 95%">
+                                    <span class="sr-only">95% Complete (success)</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="list-group-item">
+                            <div class="lgi-heading m-b-5">Google Chrome Extension</div>
+
+                            <div class="progress">
+                                <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+                                    <span class="sr-only">80% Complete (success)</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="list-group-item">
+                            <div class="lgi-heading m-b-5">Social Intranet Projects</div>
+
+                            <div class="progress">
+                                <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
+                                    <span class="sr-only">20% Complete</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="list-group-item">
+                            <div class="lgi-heading m-b-5">Bootstrap Admin Template</div>
+
+                            <div class="progress">
+                                <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
+                                    <span class="sr-only">60% Complete (warning)</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="list-group-item">
+                            <div class="lgi-heading m-b-5">Youtube Client App</div>
+
+                            <div class="progress">
+                                <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+                                    <span class="sr-only">80% Complete (danger)</span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <a href="" class="btn btn-float btn-danger m-btn waves-effect waves-circle waves-float">
+                        <i class="zmdi zmdi-plus"></i>
+                    </a>
+                </div>
+            </div>
+        </aside>
+
+        @await Html.PartialAsync("_mainmenu")
+
+        <section id="content">
+            @RenderBody()
+        </section>
+
+        <footer id="footer">
+            Федеральная служба войск национальной гвардии Российской Федерации © @DateTime.Now.Year
+
+            <ul class="f-menu">
+                <li><a href="">Главная</a></li>
+                <li><a href="">Новости</a></li>               
+                <li><a href="">Поддержа</a></li>
+                <li><a href="">Контакты</a></li>
+            </ul>
+        </footer>
+
+    </section>
+
+   
+    <!-- Page Loader -->
+    @*<div class="page-loader palette-White-500 bg">
+        <div class="preloader pl-xl pls-red">
+            <svg class="pl-circular" viewBox="25 25 50 50">
+                <circle class="plc-path" cx="50" cy="50" r="20" />
+            </svg>
+        </div>
+    </div>*@
+    <!-- LiceChat -->
+    <div id="b24-support" dir="ltr" data-b24-crm-button-cont="" class=" b24-widget-button-wrapper  b24-widget-button-position-bottom-right b24-widget-button-visible ">
+        <a asp-action="Index" asp-controller="support" title="Служба технической поддержки">
+            <div data-b24-crm-button-block-button="" class="b24-widget-button-inner-container">
+                <div data-b24-crm-button-block-border="" class="b24-widget-button-inner-mask" style="background: #00ff90;"></div>
+                <div class="b24-widget-button-block">
+                    <div data-b24-crm-button-pulse="" class="b24-widget-button-pulse b24-widget-button-pulse-animate" style="border-color: #0A7826;"></div>
+                    <div data-b24-crm-button-block-inner="" class="b24-widget-button-inner-block" style="background: #0A7826;">
+                        <div class="b24-widget-button-icon-container">
+                            <div data-b24-crm-button-icon="openline" class="b24-widget-button-inner-item b24-widget-button-icon-animation" style="">
+                                <svg class="b24-crm-button-icon b24-crm-button-icon-active" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 29">
+                                    <path class="b24-crm-button-chat-icon" fill="#FFFFFF" fill-rule="evenodd" d="M878.289968,975.251189 L878.289968,964.83954 C878.289968,963.46238 876.904379,962 875.495172,962 L857.794796,962 C856.385491,962 855,963.46238 855,964.83954 L855,975.251189 C855,976.924031 856.385491,978.386204 857.794796,978.090729 L860.589592,978.090729 L860.589592,981.876783 L860.589592,983.76981 L861.521191,983.76981 C861.560963,983.76981 861.809636,982.719151 862.45279,982.823297 L866.179185,978.090729 L875.495172,978.090729 C876.904379,978.386204 878.289968,976.924031 878.289968,975.251189 Z M881.084764,971.465135 L881.084764,976.197702 C881.43316,978.604561 879.329051,980.755508 876.426771,980.93027 L868.042382,980.93027 L866.179185,982.823297 C866.400357,983.946455 867.522357,984.94992 868.973981,984.716324 L876.426771,984.716324 L879.221567,988.502377 C879.844559,988.400361 880.153166,989.448891 880.153166,989.448891 L881.084764,989.448891 L881.084764,987.555864 L881.084764,984.716324 L882.947962,984.716324 C884.517696,984.949819 885.742758,983.697082 885.742758,981.876783 L885.742758,974.304675 C885.742659,972.717669 884.517597,971.465135 882.947962,971.465135 L881.084764,971.465135 Z" transform="translate(-855 -962)"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="b24-widget-button-inner-item b24-widget-button-close">
+                            <svg class="b24-widget-button-icon b24-widget-button-close-item" xmlns="http://www.w3.org/2000/svg" width="29" height="29" viewBox="0 0 29 29"><path fill="#FFF" fill-rule="evenodd" d="M18.866 14.45l9.58-9.582L24.03.448l-9.587 9.58L4.873.447.455 4.866l9.575 9.587-9.583 9.57 4.418 4.42 9.58-9.577 9.58 9.58 4.42-4.42"></path></svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+
+
+
+
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <script src="~/lib/moment/min/moment.min.js"></script>
+    <script src="~/lib/moment/locale/ru.js"></script>
+    @*<script src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>*@
+    @*<script src="~/lib/moment/min/moment.min.js"></script>
+        <script src="~/lib/popper.js/dist/popper.min.js"></script>*@
+    <script src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="~/lib/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="~/lib/Waves/dist/waves.min.js"></script>
+    <script src="~/lib/bootstrap-growl/jquery.bootstrap-growl.min.js"></script>
+    <script src="~/lib/autosize/dist/autosize.js"></script>
+    <script src="~/lib/jquery.bootgrid/dist/jquery.bootgrid.min.js"></script>
+    <script src="~/lib/fullcalendar/dist/fullcalendar.js"></script>
+    <script src="~/lib/fullcalendar/dist/locale/ru.js"></script>
+    <script src="~/lib/fullcalendar/dist/gcal.min.js"></script>
+    <script src="~/lib/bootstrap-sweetalert/dist/sweetalert.js"></script>
+    <script src="~/lib/chosen/chosen.jquery.min.js"></script>
+
+
+    <script src="~/js/animateheader.js"></script>
+    <script src="~/js/actions.js"></script>
+    <script src="~/js/functions.js"></script>
+    <script src="~/js/demo.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
+

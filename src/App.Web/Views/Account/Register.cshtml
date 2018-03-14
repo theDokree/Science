@@ -1,0 +1,62 @@
+﻿@{
+    Layout = "_Layout_smarty";
+}
+
+@model RegisterViewModel
+@{
+    ViewData["Title"] = "Регистрация";
+}
+<div class="login" data-lbg="blue">
+    <!-- Register -->
+    <div class="l-block toggled" id="l-register">
+        <div class="lb-header palette-Blue bg">
+            <i class="zmdi zmdi-account-circle"></i>
+            Создать аккаунт
+        </div>
+        <div class="lb-body">
+            <form asp-route-returnUrl="@ViewData["ReturnUrl"]" method="post">
+                <div asp-validation-summary="All" class="text-danger"></div>
+
+                <div class="form-group fg-float">
+                    <div class="fg-line">
+                        <label asp-for="Email" class="fg-label"></label>
+                        <input asp-for="Email" class="input-sm form-control fg-input" />
+                    </div>
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+                <div class="form-group fg-float">
+                    <div class="fg-line">
+                        <label asp-for="Password" class="fg-label"></label>
+                        <input asp-for="Password" class="input-sm form-control fg-input" />
+                    </div>
+                    <span asp-validation-for="Password" class="text-danger"></span>
+                </div>
+                <div class="form-group fg-float">
+                    <div class="fg-line">
+                        <label asp-for="ConfirmPassword" class="fg-label"></label>
+                        <input asp-for="ConfirmPassword" class="input-sm form-control fg-input" />
+                    </div>
+                    <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+                </div>
+                <div class="checkbox m-b-30">
+                    <label>
+                        <input type="checkbox" value="">
+                        <i class="input-helper"></i>
+                        Accept the license agreement
+                    </label>
+                </div>
+                <button type="submit" class="btn palette-Blue bg">Создать аккаунт</button>
+            </form>
+            <div class="m-t-30">
+                <a data-bg="teal" class="palette-Blue text d-block m-b-5" asp-action="Login" asp-route-returnurl="@ViewData["ReturnUrl"]">Уже есть учетная запись?</a>
+                <a data-bg="purple" class="palette-Blue text" asp-action="ForgotPassword">Забыли пароль?</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+@section Scripts {
+    @await Html.PartialAsync("_ValidationScriptsPartial")
+}

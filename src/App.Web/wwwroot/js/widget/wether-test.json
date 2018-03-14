@@ -1,0 +1,250 @@
+﻿{
+  "City": {
+    "Id": "63f2e482-0f44-4184-8828-d501fcc12518",
+    "CityId": 27612,
+    "GeoId": 213,
+    "Region": 213,
+    "Head": 0,
+    "Type": 1,
+    "Country": "NULL",
+    "Part": "Москва",
+    "Resort": 0,
+    "Climate": 0,
+    "Latitude": 55.75,
+    "Longitude": 37.61,
+    "Name": "Москва",
+    "UTC": 3,
+    "DateUpdate": "2017-12-19T14:00:10.897"
+  },
+  "DayParts": [
+    {
+      "Id": "b85955e7-2b2f-47ff-9f6e-1c737b9f8db9",
+      "Type": 3,
+      "TemperatureFrom": "1",
+      "TemperatureTo": "1",
+      "WeatherCondition": "overcast-and-light-snow",
+      "WeatherType": null,
+      "WindDirection": "e",
+      "WindSpeed": "2,1",
+      "Humidity": "95",
+      "Pressure": "998",
+      "MslpPressure": "748"
+    },
+    {
+      "Id": "6fb32c16-a315-422e-a974-7afc2b7d45a0",
+      "Type": 4,
+      "TemperatureFrom": "-1",
+      "TemperatureTo": "0",
+      "WeatherCondition": "overcast-and-snow",
+      "WeatherType": null,
+      "WindDirection": "e",
+      "WindSpeed": "4,6",
+      "Humidity": "95",
+      "Pressure": "998",
+      "MslpPressure": "748"
+    },
+    {
+      "Id": "5e6228ab-27b9-4321-b202-968776beb5b1",
+      "Type": 1,
+      "TemperatureFrom": "0",
+      "TemperatureTo": "0",
+      "WeatherCondition": "cloudy-and-snow",
+      "WeatherType": null,
+      "WindDirection": "e",
+      "WindSpeed": "3,5",
+      "Humidity": "94",
+      "Pressure": "998",
+      "MslpPressure": "748"
+    },
+    {
+      "Id": "e9e90cb2-fcc5-42c8-b13f-c595d9e6280f",
+      "Type": 2,
+      "TemperatureFrom": "1",
+      "TemperatureTo": "1",
+      "WeatherCondition": "overcast",
+      "WeatherType": null,
+      "WindDirection": "e",
+      "WindSpeed": "2,8",
+      "Humidity": "94",
+      "Pressure": "998",
+      "MslpPressure": "748"
+    }
+  ],
+  "Hours": [
+    {
+      "Id": "3b2795d8-d41b-4f1d-bedf-085fa046869b",
+      "HourTo": 13,
+      "Temperature": 1,
+      "WeatherCondition": "overcast",
+      "Image": "ovc"
+    },
+    {
+      "Id": "3129cc9e-c052-4ce1-8539-08fa39d6569d",
+      "HourTo": 3,
+      "Temperature": 0,
+      "WeatherCondition": "cloudy-and-snow",
+      "Image": "ovc_sn"
+    },
+    {
+      "Id": "e6b14c0e-5f48-4435-8105-0da63b003f90",
+      "HourTo": 1,
+      "Temperature": -1,
+      "WeatherCondition": "overcast-and-snow",
+      "Image": "ovc_+sn"
+    },
+    {
+      "Id": "6cfa745f-9c73-455d-b137-0edcb35b7078",
+      "HourTo": 23,
+      "Temperature": 1,
+      "WeatherCondition": "overcast",
+      "Image": "ovc"
+    },
+    {
+      "Id": "0c754461-545f-432c-b6eb-151e829d52ae",
+      "HourTo": 22,
+      "Temperature": 1,
+      "WeatherCondition": "overcast",
+      "Image": "ovc"
+    },
+    {
+      "Id": "35c3120b-ff7e-428b-a1e8-163e505d8245",
+      "HourTo": 18,
+      "Temperature": 1,
+      "WeatherCondition": "overcast",
+      "Image": "ovc"
+    },
+    {
+      "Id": "c8f9719c-369d-4b75-928a-2623699129ad",
+      "HourTo": 2,
+      "Temperature": -1,
+      "WeatherCondition": "overcast-and-snow",
+      "Image": "ovc_+sn"
+    },
+    {
+      "Id": "1d9b464b-07e5-40c2-9be3-2642cd8bf200",
+      "HourTo": 21,
+      "Temperature": 1,
+      "WeatherCondition": "overcast-and-light-snow",
+      "Image": "ovc_-sn"
+    },
+    {
+      "Id": "64d8546e-1ec5-44ab-8661-2b019f5e5a4b",
+      "HourTo": 20,
+      "Temperature": 1,
+      "WeatherCondition": "overcast",
+      "Image": "ovc"
+    },
+    {
+      "Id": "de17cf2f-ecb8-4942-8fad-406aaec0b285",
+      "HourTo": 0,
+      "Temperature": -1,
+      "WeatherCondition": "overcast-and-snow",
+      "Image": "ovc_+sn"
+    },
+    {
+      "Id": "73ac1266-e99c-4b40-9c03-52db4c896a20",
+      "HourTo": 12,
+      "Temperature": 1,
+      "WeatherCondition": "overcast",
+      "Image": "ovc"
+    },
+    {
+      "Id": "4a283a74-6523-4d7f-a96e-587c747add00",
+      "HourTo": 19,
+      "Temperature": 1,
+      "WeatherCondition": "overcast",
+      "Image": "ovc"
+    },
+    {
+      "Id": "7f1f170a-ddc5-4e00-8597-6ff25f911052",
+      "HourTo": 16,
+      "Temperature": 1,
+      "WeatherCondition": "overcast",
+      "Image": "ovc"
+    },
+    {
+      "Id": "a6428611-da0a-4807-a622-712209b53133",
+      "HourTo": 17,
+      "Temperature": 1,
+      "WeatherCondition": "overcast",
+      "Image": "ovc"
+    },
+    {
+      "Id": "9569c37e-cb25-42e5-a0e2-7c180922dabb",
+      "HourTo": 8,
+      "Temperature": 0,
+      "WeatherCondition": "overcast-and-light-snow",
+      "Image": "ovc_-sn"
+    },
+    {
+      "Id": "fa71692a-efe9-4396-a219-aae322c5a390",
+      "HourTo": 11,
+      "Temperature": 0,
+      "WeatherCondition": "overcast-and-wet-snow",
+      "Image": "ovc_ra_sn"
+    },
+    {
+      "Id": "76a6419f-5319-491e-940b-c8a673d905d0",
+      "HourTo": 10,
+      "Temperature": 0,
+      "WeatherCondition": "overcast-and-light-snow",
+      "Image": "ovc_-sn"
+    },
+    {
+      "Id": "ded82d99-bba6-4109-ba21-c9cde7f77aa2",
+      "HourTo": 7,
+      "Temperature": 0,
+      "WeatherCondition": "overcast-and-light-snow",
+      "Image": "ovc_-sn"
+    },
+    {
+      "Id": "2d213987-0a1c-4416-98ad-d9c8f00c80e5",
+      "HourTo": 4,
+      "Temperature": -1,
+      "WeatherCondition": "cloudy-and-snow",
+      "Image": "ovc_sn"
+    },
+    {
+      "Id": "03da3a23-b14c-4011-a541-e22373176f88",
+      "HourTo": 6,
+      "Temperature": 0,
+      "WeatherCondition": "overcast-and-light-snow",
+      "Image": "ovc_-sn"
+    },
+    {
+      "Id": "a9ca0b6d-9c30-434a-afd7-e2a6f8c2a7ef",
+      "HourTo": 15,
+      "Temperature": 1,
+      "WeatherCondition": "overcast",
+      "Image": "ovc"
+    },
+    {
+      "Id": "6d61ded8-fa77-4c51-b92f-ed866e524669",
+      "HourTo": 5,
+      "Temperature": -1,
+      "WeatherCondition": "cloudy-and-snow",
+      "Image": "ovc_sn"
+    },
+    {
+      "Id": "eae4b019-760f-4f0e-8655-ef7a1246386e",
+      "HourTo": 14,
+      "Temperature": 1,
+      "WeatherCondition": "overcast",
+      "Image": "ovc"
+    },
+    {
+      "Id": "03993479-864f-4384-a719-fb594ce85a91",
+      "HourTo": 9,
+      "Temperature": 0,
+      "WeatherCondition": "overcast-and-light-snow",
+      "Image": "ovc_-sn"
+    }
+  ],
+  "Id": "259cfe12-914d-4d13-b113-df57e414dbfb",
+  "Date": "2017-12-19T00:00:00",
+  "Sunrise": "2017-12-19T08:56:00",
+  "Sunset": "2017-12-19T15:56:00",
+  "Moonrise": null,
+  "Moonset": null,
+  "CityId": "63f2e482-0f44-4184-8828-d501fcc12518"
+}

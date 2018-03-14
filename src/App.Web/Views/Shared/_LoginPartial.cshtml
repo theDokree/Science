@@ -1,0 +1,38 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using App.Library.Entity.ViewModels
+@using App.Library.Entity.DAO
+
+
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+
+@if (SignInManager.IsSignedIn(User))
+{
+    <form asp-area="" asp-controller="Account" asp-action="Logout" method="post" id="logoutForm" class="navbar-right">
+
+    </form>
+
+    <li class="dropdown hm-profile">
+        <a data-toggle="dropdown" href="" title="@UserManager.GetDisplayName(User)">
+            <img src="http://oauth.vv.mvd/Ad/GetUserPhoto/?id=@User.Identity.Name&domain=rosgvard.ru" onerror="this.src='/images/user.jpg'" alt="">
+        </a>
+        <ul class="dropdown-menu pull-right dm-icon">
+            <li>
+                <a href="profile-about.html"><i class="zmdi zmdi-account"></i> Профиль</a>
+            </li>
+            <li>
+                <a class="dropdown-item" asp-area="" asp-controller="Manage" asp-action="Index" title="Manage"><i class="zmdi zmdi-settings"></i> Настройки</a>
+            </li>
+            <li>
+                <a href="javascript:document.getElementById('logoutForm').submit()" class="dropdown-item"><i class="zmdi fa fa-sign-out"></i> Выход</a>
+            </li>
+        </ul>
+    </li>
+}
+else
+{
+
+    <li>
+        <a asp-area="" asp-controller="Account" asp-action="Login" title="Вход"><i class="hm-icon fa fa-sign-in"></i> </a>
+    </li>
+}

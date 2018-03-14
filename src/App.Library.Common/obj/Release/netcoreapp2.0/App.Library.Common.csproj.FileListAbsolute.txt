@@ -1,0 +1,9 @@
+D:\Work\portal.rosgvard.ru_2017\portal\src\App.Library.Common\bin\Release\netcoreapp2.0\App.Library.Common.deps.json
+D:\Work\portal.rosgvard.ru_2017\portal\src\App.Library.Common\bin\Release\netcoreapp2.0\App.Library.Common.dll
+D:\Work\portal.rosgvard.ru_2017\portal\src\App.Library.Common\bin\Release\netcoreapp2.0\App.Library.Common.pdb
+D:\Work\portal.rosgvard.ru_2017\portal\src\App.Library.Common\obj\Release\netcoreapp2.0\App.Library.Common.csproj.CoreCompileInputs.cache
+D:\Work\portal.rosgvard.ru_2017\portal\src\App.Library.Common\obj\Release\netcoreapp2.0\App.Library.Common.AssemblyInfoInputs.cache
+D:\Work\portal.rosgvard.ru_2017\portal\src\App.Library.Common\obj\Release\netcoreapp2.0\App.Library.Common.AssemblyInfo.cs
+D:\Work\portal.rosgvard.ru_2017\portal\src\App.Library.Common\obj\Release\netcoreapp2.0\App.Library.Common.dll
+D:\Work\portal.rosgvard.ru_2017\portal\src\App.Library.Common\obj\Release\netcoreapp2.0\App.Library.Common.pdb
+D:\Work\portal.rosgvard.ru_2017\portal\src\App.Library.Common\obj\Release\netcoreapp2.0\App.Library.Common.csprojResolveAssemblyReference.cache

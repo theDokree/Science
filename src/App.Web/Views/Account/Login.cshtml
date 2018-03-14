@@ -1,0 +1,120 @@
+﻿@{
+        Layout = "_Layout_smarty";
+    }
+
+@using System.Collections.Generic
+@using System.Linq
+@using Microsoft.AspNetCore.Http
+@using Microsoft.AspNetCore.Http.Authentication
+@using App.Library.Entity.DAO
+@model LoginViewModel
+@inject SignInManager<ApplicationUser> SignInManager
+@{
+    ViewData["Title"] = "Вход";
+}
+
+
+<div class="container">
+    <div class="c-header">
+        <h2>@ViewData["Title"]</h2>
+    </div>
+    <div class="card">
+        <div class="card-body card-padding">
+            <div class="row">
+                <div class="col-md-6">
+                    <h4 class="f-500 m-b-5 c-black">Вход с помощью локальной учётной записи</h4>
+                    <small>Maecenas seddiam eget risusvarius blandit</small>
+
+                    <form asp-route-returnurl="@ViewData["ReturnUrl"]" method="post">
+                        <p>
+                            <div asp-validation-summary="All" class="text-danger font-small"></div>
+                        </p>
+                        <div class="form-group fg-float">
+                            <div class="fg-line">
+                                <label asp-for="Email" class="fg-label"></label>
+                                <input asp-for="Email" class="input-sm form-control fg-input" />
+                            </div>
+                            <span asp-validation-for="Email" class="text-danger font-small"></span>
+                        </div>
+                        <div class="form-group fg-float">
+                            <div class="fg-line">
+                                <label asp-for="Password" class="fg-label"></label>
+                                <input asp-for="Password" class="input-sm form-control fg-input" />
+                            </div>
+                            <span asp-validation-for="Password" class="text-danger font-small"></span>
+                        </div>
+                        <div class="form-group fg-float">
+                            <div class="fg-line">
+                                <div class="checkbox m-b-15">
+                                    <input asp-for="RememberMe" type="checkbox" />
+                                    <i class="input-helper"></i>
+                                    <label asp-for="RememberMe" class="checkbox checkbox-inline m-r-20">@Html.DisplayNameFor(m => m.RememberMe)</label>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn palette-Red bg waves-effect">Войти</button>
+                    </form>
+                </div>
+
+                <div class="col-md-6">
+                    <h4 class="f-500 m-b-5 c-black">Вход с помощью сервисов Росгвардии</h4>
+                    <small>Вход с помощью сервисов Росгвардии</small>
+
+                    @{
+                        var loginProviders = (await SignInManager.GetExternalAuthenticationSchemesAsync()).ToList();
+                        if (loginProviders.Count == 0)
+                        {
+
+                            <p class="font-small">Дополнительные службы авторизации отсутствуют.</p>
+
+                        }
+                        else
+                        {
+                            <form asp-action="ExternalLogin" asp-route-returnurl="@ViewData["ReturnUrl"]" method="post" class="form-horizontal">
+                                <p>
+                                    @foreach (var provider in loginProviders)
+                                    {
+                                        <button type="submit" class="btn palette-Red bg waves-effect m-t-15" name="provider" value="@provider.Name" title="Войти с помощью сервиса @provider.DisplayName">@provider.Name</button>
+
+                                            @*<a class="icons-sm fb-ic"><i class="fa fa-facebook white-text fa-lg"> </i></a>*@
+                                    }
+                                </p>
+                            </form>
+                        }
+                    }
+                </div>
+            </div>
+            <!-- Forgot Password -->
+            <div class="l-block" id="l-forget-password">
+                <div class="lb-header palette-Purple bg">
+                    <i class="zmdi zmdi-account-circle"></i>
+                    Forgot Password?
+                </div>
+
+                <div class="lb-body">
+                    <p class="m-b-30">Lorem ipsum dolor fringilla enim feugiat commodo sed ac lacus.</p>
+
+                    <div class="form-group fg-float">
+                        <div class="fg-line">
+                            <input type="text" class="input-sm form-control fg-input">
+                            <label class="fg-label">Email Address</label>
+                        </div>
+                    </div>
+
+                    <button class="btn palette-Purple bg">Create Account</button>
+
+                    <div class="m-t-30">
+                        <a data-block="#l-login" data-bg="teal" class="palette-Purple text d-block m-b-5" href="">Already have an account?</a>
+                        <a data-block="#l-register" data-bg="blue" href="" class="palette-Purple text">Create an account</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+@section Scripts {
+    @await Html.PartialAsync("_ValidationScriptsPartial")
+}

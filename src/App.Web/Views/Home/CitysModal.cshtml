@@ -1,0 +1,45 @@
+﻿@using App.Library.Entity.ViewModels.Weather
+@model IList<Citys>
+    @*<div class="modal fade hidden-print" tabindex="-1" role="dialog" id="sa-select-city">*@
+        <!-- Inline style just for preview -->
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form action="/Home/WeatherComponent" method="post">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Выбрать город</h4>
+                    </div>
+                    <div class="modal-body">
+                        <select id="data-select-city" name="CityId" data-placeholder="Выбрать город..." class="chosen">
+                            @foreach (var item in Model)
+                            {
+                                <option value="@item.CityId">@item.CityName</option>
+                            }
+
+                        </select>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-link waves-effect">Сохранить</button>
+                        <button type="button" class="btn btn-link waves-effect" data-dismiss="modal">Отмена</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    @*</div>*@
+<script>
+    $(document).ready(function () {
+        if ($('.chosen')[0]) {
+            $('.chosen').chosen({
+                width: '100%',
+                allow_single_deselect: true
+            });
+        }
+
+
+
+
+
+
+
+    });
+</script>
